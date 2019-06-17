@@ -26,8 +26,6 @@ import { HeroesComponent } from './components/heroes/heroes.component';
   imports: [
     BrowserModule,
     AppRoutingModule
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]
