@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app.routes';
 
 
 // Servicios
-
+// Se incluyen automaticamente en providedIn:'root' en los servicios
 
 // Componentes
 import { AppComponent } from './app.component';
