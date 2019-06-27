@@ -1,0 +1,12 @@
+.flex-padre {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.card-tam {
+  width: 400px !important;
+  margin: 5px 5px;
+}

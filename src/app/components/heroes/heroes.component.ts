@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService } from '../../servicios/heroes.service';
 
+// Requerimos interfaces
+import { Heroe } from '../../interface/interface';
+
 
 @Component({
   selector: 'app-heroes',
@@ -9,12 +12,12 @@ import { HeroesService } from '../../servicios/heroes.service';
 })
 export class HeroesComponent implements OnInit {
   // Declaramos la variable donde reibiremos la lista de heroes
-  public heroes: any[];
+  public heroes: Heroe[];
   /*
      Injectamos el servicio en el constructor donde queremos utilizar
      Private solo sera accesible en este componente
   */
-  constructor(private _heroesService: HeroesService) {
+  constructor(private heroesService: HeroesService) {
     // Diferencia entre constructor y ngOnInit
     // El constructor carga Primero.
     console.log('Constructor carga primero');
@@ -23,7 +26,7 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {
     console.log('ngOnIn siempre carga segundo');
-    this.heroes = this._heroesService.getHeroes();
+    this.heroes = this.heroesService.getHeroes();
     console.log(this.heroes);
 
   }
