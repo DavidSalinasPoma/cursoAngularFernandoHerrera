@@ -6,14 +6,28 @@
   </div>
   <div class="col-12" id="">
     <div class="flex-padre" id="">
-      <div class="border rounded card-tam" *ngFor="let heroe of heroes">
+      <!-- Recorriendo el array  heroes con ngFor -->
+      <div class="border rounded card-tam animated fadeIn fast" *ngFor="let heroe of heroes; let i=index">
+        <!-- Con las llaves cuadradas lo convertimos en angular -->
         <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
         <div class="card-body">
+          <!-- Aqui utilizamos la interpolacion normal de angular -->
           <h5 class="card-title">{{ heroe.nombre }}</h5>
           <p class="card-text">{{ heroe.bio }}</p>
           <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
           <!-- Añadimos un boton para el card -->
-          <button type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
+
+          <!-- Exiten dos maneras de moverse de una pagina a otra pagina -->
+          <!-- 1.- Utilizando el routerLink donde se ven todas las direcciones del link -->
+
+          <a [routerLink]="[ '/heroe', i ]" class="btn btn-outline-primary btn-block">Ver más...</a>
+
+          <!-- Este funciona pero esta para otro proposito -->
+          <a [routerLink]="[ 'home']" class="btn btn-outline-primary btn-block">Ver más...</a>
+
+          <!-- 2.- utilizando programacion -->
+          <!-- Pasando datos por parametro -->
+          <button (click)="navegacion(i)" type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
         </div>
       </div>
     </div>
