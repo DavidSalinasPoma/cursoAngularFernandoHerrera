@@ -69,4 +69,12 @@ export class HeroesService {
   public getHeroes() {
     return this.heroes;
   }
+
+  // Mostrando Una sola Información
+  /**
+   * getHeroe
+   */
+  public getHeroe(index: string) {
+    return this.heroes[index];
+  }
 }
